@@ -40,6 +40,7 @@ dependencies {
     implementation(libs.androidx.startup)
     implementation(libs.androidx.work.ktx)
     implementation(libs.hilt.ext.work)
+    implementation(libs.firebase.cloud.messaging)
 
     testImplementation(project(":core:testing"))
     androidTestImplementation(project(":core:testing"))

@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 The Android Open Source Project
+ * Copyright 2023 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,28 +20,16 @@ plugins {
 }
 
 android {
-    namespace = "com.google.samples.apps.nowinandroid.core.testing"
+    namespace = "com.google.samples.apps.nowinandroid.core.notifications"
 }
 
 dependencies {
-    implementation(project(":core:common"))
-    implementation(project(":core:data"))
-    implementation(project(":core:domain"))
     implementation(project(":core:model"))
-    implementation(project(":core:notifications"))
 
-    implementation(libs.kotlinx.datetime)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.compose.runtime)
+    implementation(libs.androidx.core.ktx)
 
-    api(libs.junit4)
-    api(libs.androidx.test.core)
-    api(libs.kotlinx.coroutines.test)
-    api(libs.turbine)
-
-    api(libs.androidx.test.espresso.core)
-    api(libs.androidx.test.runner)
-    api(libs.androidx.test.rules)
-    api(libs.androidx.compose.ui.test)
-    api(libs.hilt.android.testing)
-
-    debugApi(libs.androidx.compose.ui.testManifest)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.cloud.messaging)
 }
